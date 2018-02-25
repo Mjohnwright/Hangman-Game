@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Matthew Wright Psychic Game</title>
+        <title>Matthew Wright Hangman Game</title>
 
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -15,6 +15,33 @@
     <body>
         <h1>Hangman Game</h1>
 
+        <div class = "gamePanel">
+            <h2>Press any key to get started</h2>
+            <h2 id = "wins"></h2>
+            <h2 id = "word"></h2>
+            </div>
+
+        <div class="letterPanel">
+            <div class = "letterSpots">
+                <p id= "space1"></p>
+                <p id= "space2"></p>
+                <p id= "space3"></p>
+                <p id= "space4"></p>
+                <p id= "space5"></p>
+                <p id= "space6"></p>
+                <p id= "space7"></p>
+                <p id= "space8"></p>
+                <p id= "space9"></p>
+                <p id= "space10"></p>
+            </div>
+        </div>
+
+        <div class="numberOfGuesses"></div>
+            <p> Number of guesses remaining</p>
+            <p id="remainingGuesses"></p>
+            <p> Letters guessed so far</p>
+            <p id="guessesSoFar"></p>
+        </div>
 
         <script src="assets/javascript/game.js"></script>
 

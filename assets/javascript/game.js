@@ -1,59 +1,134 @@
+/* ----------------------
+          VARIABLES       
+   ----------------------*/
+var computerWord = '';
+var wins = 0;
+var word = [];
+var guessesLeft = 10;
+var wordArray = [
+    'apple',
+    'pear',
+    'banana', 
+    'grapefruit',
+    'peach'];
+var lettersGuess = '';
+var userGuess = '';
 
-//Values are set
-lettersIndex = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-    'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-wins = 0;
-losses = 0;
-guessesSoFar = []; // this is an array value
-guessesLeft = 10;
-
-//function is created to run a loop
-var runLoop = function () { // ELIMINATING THE FUNCTION HAD NO EFFECT ON PROGRAM WORKABILITY
 
     // computer chooses a letter and it is assigned a variable name
-    var computerCurrentChoice = lettersIndex[Math.floor(Math.random() * lettersIndex.length)];
-    guessesLeft = 10;
+    computerWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+    console.log(computerWordChoice);
+    /* ----------------------
+          FUNCTIONS       
+   ----------------------*/
 
-    // when User presses key it launches a function to execute process
-    document.onkeyup = function (event) {
+   // when User presses key it launches a function to execute process
+        userGuessFunction = document.onkeyup {
 
-        //when user preses letter key it is stored as var userGuess
-        var userGuess = event.key;
+    
+        // document.onkeyup = function (event) {\
 
-        // If the user and the computer choose the same letter:         
-        if (userGuess === computerCurrentChoice) {
-            wins++;  // wins adds 1,
-            alert("You won!!!");//alert is launched notifying user of win
-            computerCurrentChoice = lettersIndex[Math.floor(Math.random() * lettersIndex.length)];
-            guessesLeft = 10; // resets to 10
-            guessesSoFar = []; // guessesSoFar are reset to 'blank'
+    //when user preses letter key it is stored as var userGuess
+    function guessSequence() {
+
+            
+
+
+ 
+     letterGuess = event.key;
+          console.log(letterGuess);
+          function letterGuess(){
+
+            $('#guessesSoFar').push(letterGuess);
+            console.log(letterGuess);
+
+            // document.getElementById('guesses').innerHTML = userGuess;
+
+
+          }
         }
+        
+    function guessSequence();
+    
+        
+        
+        //   function isRightLetter (userGuess) {
+        //       for (i=0; i<computerWordChoice.length; i++);
+        //       //how do i compare the letter guesses to the computer word?
+        //       console.log(i);
+        //   } if (userGuess == computerWordChoice.charAt(0)) 
+        //     $(".letterSlots").text(userGuess);
 
-        // if userGuess and computerChoice are different: 
-        else {
-            guessesLeft--; // guessesLeft decreases 1,
-            guessesSoFar.push(userGuess);  //guessesSoFar is 'pushed' and logs the letter choice into array
-        }
+            
+        //     else {
+        //       guessesLeft--;
+        //       $("#remainingGuesses").text(guessesLeft);
+          
+        //     }
+        //     };
 
-        // if guesses left reached 0:
-        if (guessesLeft < 1) {
-            alert("You lose!");//alert is launched notifying user of loss
-            guessesSoFar = []; // guessesSoFar are reset to 'blank'
-            losses++;  // losses adds 1
-            computerCurrentChoice = lettersIndex[Math.floor(Math.random() * lettersIndex.length)];
-            guessesLeft = 10; // resets to 10
-        }
+        
 
+          
+        
+
+    //       if userGuess === computerWordChoice
+    //  $('#guesses').push(userGuess);
+          
+        
+    // };
+
+    // on("click", function () {
+    //     lettersGuesses = userTotal = (userTotal + value1);
+    //     $('#scoreBox').text(userTotal);//try this on this line
+    //     // WINNING
+    //     if (userTotal === randomComputerNumber) {
+    //         wins++;
+    //         //updates the WIN total on the DOM
+    //         $('#winsOrLoss').text('You won!');
+    //         $('#wins').text('Wins   = ' + wins);
+    //         userTotal = 0;
+    //         initializeGame();
+    //         //LOSING
+    //     } else if (userTotal > randomComputerNumber) {
+    //         losses++;
+    //         //updates the LOSS total on the DOM
+    //         $('#winsOrLoss').text('You lost!');
+    //         $('#losses').text('Losses = ' + losses);
+    //         userTotal = 0;
+    //         initializeGame();
+    //     }
+    // });
+    
+
+    
         // Rewrites the html with updated values
-        document.getElementById('wins').innerHTML = "Wins: " + wins;
-        document.getElementById('losses').innerHTML = "Losses: " + losses;
-        document.getElementById('guessesLeft').innerHTML = "Guesses Left: " + guessesLeft;
-        document.getElementById('guessesSoFar').innerHTML = "Guesses So Far: " + guessesSoFar;
-    }
-};
+        // document.getElementById('wins').innerHTML = "Wins: " + wins;
+        // document.getElementById('losses').innerHTML = "Losses: " + losses;
+        // document.getElementById('guessesLeft').innerHTML = "Guesses Left: " + guessesLeft;
+        // document.getElementById('guessesSoFar').innerHTML = "Guesses So Far: " + guessesSoFar;
+    
 
-runLoop(); //  Calls the function
+// runLoop(); //  Calls the function
+
+/* Display the following on the page:
+Press any key to get started!
+Wins: (# of times user guessed the word correctly).
+
+
+
+If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _.
+As the user guesses the correct letters, reveal them: m a d o _  _ a.
+
+
+
+Number of Guesses Remaining: (# of guesses remaining for the user).
+Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
+After the user wins/loses the game should automatically choose another word and make the user play it.
+*/
+
+
 
 
 
